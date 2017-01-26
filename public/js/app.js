@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 var HelloMessage = React.createClass({
   render: function () {
@@ -7,6 +7,6 @@ var HelloMessage = React.createClass({
   }
 });
 
-var mountNode = document.getElementById('container');
+var mountNode = document.getElementById('root');
 
 ReactDOM.render(<HelloMessage name ="John"/>, mountNode);
