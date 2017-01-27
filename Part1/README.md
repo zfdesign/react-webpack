@@ -32,6 +32,7 @@ $ mkdir js && touch index.html $_/app.js
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Hello Message - React Webpack</title>
     <script data-require="ReactJs@15.0.1" data-semver="15.0.1" src="https://fb.me/react-15.0.1.min.js"></script>
     <script data-require="ReactJs@15.0.1" data-semver="15.0.1" src="https://fb.me/react-dom-15.0.1.min.js"></script>
