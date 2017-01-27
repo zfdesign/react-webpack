@@ -39,7 +39,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx$/, // NOTE: Change to `jsx`
+                test: /\.jsx?$/, // NOTE: Change to `/\.jsx?$` that would allow both `.js` and `.jsx`
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }
@@ -177,7 +177,7 @@ Let's create a reusable Component the `extends React.Component`
 // ...
 
 // Notice the use of props
-class NameInput extends React.Component {
+class TextInput extends React.Component {
   render () {
     return (
       <div> 
@@ -204,8 +204,8 @@ const Form = React.createClass({
   render () {
     return (
       <form>
-        <NameInput labelText="First name: " name="firstName"/>
-        <NameInput labelText="Last name: " name="lastName"/>
+        <TextInput labelText="First name: " name="firstName"/>
+        <TextInput labelText="Last name: " name="lastName"/>
         <EmailInput labelText="Email: "/>
       </form>
     );

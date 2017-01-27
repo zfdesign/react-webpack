@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class NameInput extends React.Component {
+class TextInput extends React.Component {
   render () {
     return (
       <div> 
@@ -29,8 +29,8 @@ const Form = React.createClass({
   render () {
     return (
       <form>
-        <NameInput labelText="First name: " name="firstName"/>
-        <NameInput labelText="Last name: " name="lastName"/>
+        <TextInput labelText="First name: " name="firstName"/>
+        <TextInput labelText="Last name: " name="lastName"/>
         <EmailInput labelText="Email: "/>
       </form>
     );
