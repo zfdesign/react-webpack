@@ -150,11 +150,9 @@ const Form = () => {
 // ...
 ```
 
-
 ## Classes
 
-Using classes 
-
+Using React.createClass 
 ```JavaScript
 // ...
 
@@ -169,4 +167,53 @@ const Form = React.createClass({
     );
   }
 });
+```
+This is React recommended syntax for Components. 
+
+### Use of `this` in Classes
+
+Let's create a reusable Component the `extends React.Component` 
+```JavaScript
+// ...
+
+// Notice the use of props
+class NameInput extends React.Component {
+  render () {
+    return (
+      <div> 
+        <label>{this.props.labelText}</label>
+        <input type="text" id={this.props.name}/>
+      </div>
+    );
+  };
+};
+
+class EmailInput extends React.Component {
+  render() {
+    return (
+      <div>
+        <label>{this.props.labelText}</label>
+        <input type="email" id="email"/>
+      </div>
+    );
+  }
+};
+
+// Using React.createClass
+const Form = React.createClass({
+  render () {
+    return (
+      <form>
+        <NameInput labelText="First name: " name="firstName"/>
+        <NameInput labelText="Last name: " name="lastName"/>
+        <EmailInput labelText="Email: "/>
+      </form>
+    );
+  }
+});
+
+// ...
+```
+
+_Notice the use of props, using `this` keyword to access the context of the Compoment_
 
