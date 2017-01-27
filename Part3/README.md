@@ -117,3 +117,35 @@ ReactDOM.render(<Form/>, rootNode);
 * Note: The new wrapping `<div>` element in the `EmailInput` tags. 
 This is because there cannot be multiple `React.createElement`
 
+## Passing data back to the Component - `props` 
+
+Compare the changes from previous commit in this section. 
+Important changes are highlighted in comments below
+```JavaScript
+// Part 3:: /js/app.jsx
+///...
+
+const NameInput = (props) => {
+  // NOTE: referring to the data passed through `props` argument
+  return (
+    <div> 
+      <label>{props.labelText}</label>
+      <input type="text" id="name"/>
+    </div>
+  );
+};
+
+// ...
+
+const Form = () => {
+  // NOTE: Using custom attributes to pass as data
+  return (
+    <form>
+      <NameInput labelText="Name: "/>
+      <EmailInput labelText="Email: "/>
+    </form>
+  );
+};
+
+// ...
+```

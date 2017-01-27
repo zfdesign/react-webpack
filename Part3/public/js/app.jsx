@@ -2,10 +2,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const EmailInput = () => {
+const NameInput = (props) => {
+  // Note: the wrapping div
   return (
-    <div> // Note: the wrapping div
-      <label>Email:</label>
+    <div> 
+      <label>{props.labelText}</label>
+      <input type="text" id="name"/>
+    </div>
+  );
+};
+
+const EmailInput = (props) => {
+  // Note: the wrapping div
+  return (
+    <div>
+      <label>{props.labelText}</label>
       <input type="email" id="email"/>
     </div>
   );
@@ -14,7 +25,8 @@ const EmailInput = () => {
 const Form = () => {
   return (
     <form>
-      <EmailInput/>
+      <NameInput labelText="Name: "/>
+      <EmailInput labelText="Email: "/>
     </form>
   );
 };

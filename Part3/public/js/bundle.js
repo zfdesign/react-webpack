@@ -60,15 +60,29 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// Part 3:: /js/app.jsx
-	var EmailInput = function EmailInput() {
+	var NameInput = function NameInput(props) {
+	  // Note: the wrapping div
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    ' // Note: the wrapping div',
 	    _react2.default.createElement(
 	      'label',
 	      null,
-	      'Email:'
+	      props.labelText
+	    ),
+	    _react2.default.createElement('input', { type: 'text', id: 'name' })
+	  );
+	};
+	
+	var EmailInput = function EmailInput(props) {
+	  // Note: the wrapping div
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'label',
+	      null,
+	      props.labelText
 	    ),
 	    _react2.default.createElement('input', { type: 'email', id: 'email' })
 	  );
@@ -78,7 +92,8 @@
 	  return _react2.default.createElement(
 	    'form',
 	    null,
-	    _react2.default.createElement(EmailInput, null)
+	    _react2.default.createElement(NameInput, { labelText: 'Name: ' }),
+	    _react2.default.createElement(EmailInput, { labelText: 'Email: ' })
 	  );
 	};
 	
