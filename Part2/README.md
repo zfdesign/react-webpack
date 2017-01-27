@@ -1,4 +1,4 @@
-# A Demo app
+# A Demo of ReactDOM render
 
 Part 2
 
