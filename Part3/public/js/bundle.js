@@ -61,7 +61,6 @@
 	
 	// Part 3:: /js/app.jsx
 	var NameInput = function NameInput(props) {
-	  // Note: the wrapping div
 	  return _react2.default.createElement(
 	    'div',
 	    null,
@@ -75,7 +74,6 @@
 	};
 	
 	var EmailInput = function EmailInput(props) {
-	  // Note: the wrapping div
 	  return _react2.default.createElement(
 	    'div',
 	    null,
@@ -88,14 +86,18 @@
 	  );
 	};
 	
-	var Form = function Form() {
-	  return _react2.default.createElement(
-	    'form',
-	    null,
-	    _react2.default.createElement(NameInput, { labelText: 'Name: ' }),
-	    _react2.default.createElement(EmailInput, { labelText: 'Email: ' })
-	  );
-	};
+	// Using React.createClass
+	var Form = _react2.default.createClass({
+	  displayName: 'Form',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'form',
+	      null,
+	      _react2.default.createElement(NameInput, { labelText: 'Name: ' }),
+	      _react2.default.createElement(EmailInput, { labelText: 'Email: ' })
+	    );
+	  }
+	});
 	
 	var rootNode = document.getElementById('root');
 	_reactDom2.default.render(_react2.default.createElement(Form, null), rootNode);

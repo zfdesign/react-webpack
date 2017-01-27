@@ -149,3 +149,24 @@ const Form = () => {
 
 // ...
 ```
+
+
+## Classes
+
+Using classes 
+
+```JavaScript
+// ...
+
+// Using React.createClass
+const Form = React.createClass({
+  render () {
+    return (
+      <form>
+        <NameInput labelText="Name: "/>
+        <EmailInput labelText="Email: "/>
+      </form>
+    );
+  }
+});
+

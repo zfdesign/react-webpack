@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const NameInput = (props) => {
-  // Note: the wrapping div
   return (
     <div> 
       <label>{props.labelText}</label>
@@ -13,7 +12,6 @@ const NameInput = (props) => {
 };
 
 const EmailInput = (props) => {
-  // Note: the wrapping div
   return (
     <div>
       <label>{props.labelText}</label>
@@ -22,14 +20,17 @@ const EmailInput = (props) => {
   );
 };
 
-const Form = () => {
-  return (
-    <form>
-      <NameInput labelText="Name: "/>
-      <EmailInput labelText="Email: "/>
-    </form>
-  );
-};
+// Using React.createClass
+const Form = React.createClass({
+  render () {
+    return (
+      <form>
+        <NameInput labelText="Name: "/>
+        <EmailInput labelText="Email: "/>
+      </form>
+    );
+  }
+});
 
 const rootNode = document.getElementById('root');
 ReactDOM.render(<Form/>, rootNode);
