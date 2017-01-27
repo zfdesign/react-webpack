@@ -68,16 +68,16 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Part 3:: /js/app.jsx
 	
 	
-	var NameInput = function (_React$Component) {
-	  _inherits(NameInput, _React$Component);
+	var TextInput = function (_React$Component) {
+	  _inherits(TextInput, _React$Component);
 	
-	  function NameInput() {
-	    _classCallCheck(this, NameInput);
+	  function TextInput() {
+	    _classCallCheck(this, TextInput);
 	
-	    return _possibleConstructorReturn(this, (NameInput.__proto__ || Object.getPrototypeOf(NameInput)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (TextInput.__proto__ || Object.getPrototypeOf(TextInput)).apply(this, arguments));
 	  }
 	
-	  _createClass(NameInput, [{
+	  _createClass(TextInput, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -93,7 +93,7 @@
 	    }
 	  }]);
 	
-	  return NameInput;
+	  return TextInput;
 	}(_react2.default.Component);
 	
 	;
@@ -135,8 +135,8 @@
 	    return _react2.default.createElement(
 	      'form',
 	      null,
-	      _react2.default.createElement(NameInput, { labelText: 'First name: ', name: 'firstName' }),
-	      _react2.default.createElement(NameInput, { labelText: 'Last name: ', name: 'lastName' }),
+	      _react2.default.createElement(TextInput, { labelText: 'First name: ', name: 'firstName' }),
+	      _react2.default.createElement(TextInput, { labelText: 'Last name: ', name: 'lastName' }),
 	      _react2.default.createElement(EmailInput, { labelText: 'Email: ' })
 	    );
 	  }
