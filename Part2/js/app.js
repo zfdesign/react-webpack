@@ -12,7 +12,12 @@ ReactDOM.render(
     React.createElement(
         'div',
         { className: 'demo' },
-        'React Element'
+        'React Element',
+        React.createElement(
+            "p",
+            null,
+            new Date().toString()
+        )
     ),
     reactContainer
 );
