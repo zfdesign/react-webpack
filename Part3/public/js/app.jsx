@@ -2,11 +2,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const EmailInput = () => {
+  return (
+    <div> // Note: the wrapping div
+      <label>Email:</label>
+      <input type="email" id="email"/>
+    </div>
+  );
+};
+
 const Form = () => {
   return (
     <form>
-        <label>Email:</label>
-        <input type="email" id="email"/>
+      <EmailInput/>
     </form>
   );
 };

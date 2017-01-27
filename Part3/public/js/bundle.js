@@ -60,16 +60,25 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// Part 3:: /js/app.jsx
-	var Form = function Form() {
+	var EmailInput = function EmailInput() {
 	  return _react2.default.createElement(
-	    'form',
+	    'div',
 	    null,
+	    ' // Note: the wrapping div',
 	    _react2.default.createElement(
 	      'label',
 	      null,
 	      'Email:'
 	    ),
 	    _react2.default.createElement('input', { type: 'email', id: 'email' })
+	  );
+	};
+	
+	var Form = function Form() {
+	  return _react2.default.createElement(
+	    'form',
+	    null,
+	    _react2.default.createElement(EmailInput, null)
 	  );
 	};
 	

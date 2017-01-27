@@ -1,4 +1,4 @@
-# JSX 
+# JSX and React Components
 
 ## Initial setup
 
@@ -39,7 +39,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/, // NOTE: Change to `jsx`
+                test: /\.jsx$/, // NOTE: Change to `jsx`
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }
@@ -61,4 +61,59 @@ $ serve
 ```
 At this point there should be the new Form rendered on the screen. 
 
+
+## React Components
+
+The part in the `app.jsx` below is a representation of React Component
+```JavaScript
+const Form = () => {
+  return (
+    <form>
+        <label>Email:</label>
+        <input type="email" id="email"/>
+    </form>
+  );
+};
+```
+That can be later referred to as `<Form/>`. However it is not all plain `HTML` see below.
+
+### Element attributes in `.jsx`
+> Since JSX is closer to JavaScript than HTML, 
+React DOM uses camelCase property naming convention 
+instead of HTML attribute names.
+For example, `class` becomes `className` in JSX, 
+and `tabindex` becomes `tabIndex`.
+
+[Reference](https://facebook.github.io/react/docs/introducing-jsx.html#specifying-children-with-jsx)
+
+
+### Reusable React components
+Lets extract the `label` and `input` elements in `app.jsx` as follows
+```JavaScript
+// Part 3:: /js/app.jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const EmailInput = () => {
+  return (
+    <div> // Note: the wrapping div
+      <label>Email:</label>
+      <input type="email" id="email"/>
+    </div>
+  );
+};
+
+const Form = () => {
+  return (
+    <form>
+      <EmailInput/>
+    </form>
+  );
+};
+
+const rootNode = document.getElementById('root');
+ReactDOM.render(<Form/>, rootNode);
+```
+* Note: The new wrapping `<div>` element in the `EmailInput` tags. 
+This is because there cannot be multiple `React.createElement`
 
